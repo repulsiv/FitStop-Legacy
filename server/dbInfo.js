@@ -1,3 +1,5 @@
-var dbUri = 'fsadmin:fitstop@ds141524.mlab.com:41524/fit-stop';
+var dbUri = require('./config');
+
+var dbUri = dbUri.local || dbUri.heroku;
 
 module.exports.dbUri = dbUri;

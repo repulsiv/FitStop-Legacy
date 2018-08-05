@@ -1,3 +1,8 @@
 package-lock.json
 config.js
 node_modules
+.DS_Store
+
+/server/seedDb.js
+/client/public/compiled
+/client/public/dist/bundle.js

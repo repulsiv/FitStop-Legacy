@@ -16,10 +16,12 @@ var app = express();
 
 app.listen(process.env.PORT || 3000);
 
-app.use('/public', express.static('client/public'));
-app.use('/react', express.static('node_modules/react/dist'));
-app.use('/react-dom', express.static('node_modules/react-dom/dist'));
-app.use('/jquery', express.static('node_modules/jquery/dist'));
+app.use(express.static(__dirname + '/../client/public/dist'));
+// app.use('/react', express.static('node_modules/react/dist'));
+// app.use('/react-dom', express.static('node_modules/react-dom/dist'));
+// app.use('/chart.js', express.static('node_modules/chart.js/dist/Chart.js'));
+// app.use('/react-chartjs-2', express.static('node_modules/react-chartjs-2/dist/react-chartjs-2.js'));
+// app.use('/jquery', express.static('node_modules/jquery/dist'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -127,7 +129,7 @@ function addWorkout(req, res) {
 function checkLogin(req, res) {
   var name = req.body.username;
   var pass = req.body.password;
-
+  
   if (!name || !pass) res.status(400).send('Log in attempt failed');
 
   User.findOne({username:name}, function(err, data) {
