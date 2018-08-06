@@ -1,9 +1,22 @@
+import React from 'react';
+import Header from './Header.jsx';
+import Dashboard from './Dashboard.jsx';
+import Login from './Login.jsx';
+import $ from 'jquery';
+import Countdown from './Countdown.jsx';
+import PastWorkout from './PastWorkout.jsx';
+import SignUp from './SignUp.jsx';
+import Workout from './Workout.jsx';
+import Summary from './Summary.jsx';
+import exampleExerciseData from './exampleExerciseData';
+import './../css/style.css';
+
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       currentState: 'Dashboard',
-      currentWorkout: window.exampleExerciseData,
+      currentWorkout: exampleExerciseData,
       currentExercise: 0,
       workoutDate: null,
       workoutHistory: [],
@@ -286,4 +299,5 @@ class App extends React.Component {
 
 } // End of Class
 
-window.App = App;
+export default App;
+// window.App = App;

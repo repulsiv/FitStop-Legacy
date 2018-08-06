@@ -1,3 +1,7 @@
+import React from 'react';
+import './../css/style.css';
+
+
 var Countdown = (props) => (
   <div className="countdown">
     <h1>Get Ready!</h1>
@@ -7,5 +11,5 @@ var Countdown = (props) => (
   </div>
 );
 
-
-window.Countdown = Countdown;
+export default Countdown;
+// window.Countdown = Countdown;
