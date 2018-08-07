@@ -167,5 +167,13 @@ var scorpionStretch = {
   difficulty: 'easy'
 }
 
+var data = [highKnees, flutterKicks, cobra, catCow, hipCircles,  plank, plankKneeToElbow, windshieldWipers, reverseCrunch, sitUps, standingCrossBodyCrunches, bicycleCrunches, doubleSideJacknifes,  ragdoll, scorpionStretch];
 
+var insertExercises = function () {
+db.exerciseModel.create(data)
+  .then(() => db.disconnect());;
+};
+
+
+insertExercises();
 
